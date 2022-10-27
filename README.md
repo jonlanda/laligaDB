@@ -1,6 +1,6 @@
 # laligaDB
 Database with LaLiga teams for module M165
 
-## members
+## Members
 - Jon Landa
 - Raul Monje
