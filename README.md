@@ -1,22 +1,19 @@
-# laligaDB
-Database with LaLiga teams for module M165
+# laligaPlayoffDB
+Database with LaLiga teams and Playoff Matches with 5 Players per Team as 5v5 Matches for module M165
 
 # NEO4J
 
 # Checklist
 - [x] Installation
-- [x] Data Modeling
-- [ ] Logisches Datenmodell
+- [ ] Data Modeling
 - [ ] Skript
 
 ## Ziel
-- Datenbank mit allen Teams von Laliga
+- Datenbank mit 8 Teams von Laliga oder LaLiga 2
 - Mind. 5 Spieler pro team
 
 ## Teams
 - Name
-- Punkte
-- Anzahl Ligatitel
 - Trainer
 - Spieler
 
@@ -25,10 +22,26 @@ Database with LaLiga teams for module M165
 - Club
 - Position
 - Nummer
-- Anzahl Spiele
 - Tore
-- Assists
-- Rote Karten
+
+## Stadion
+- Stadionname
+- Ort
+
+## Match
+- Spielnr
+- Stadion
+- Heimmannschaft
+- Auswärtsmannschaft
+- Heimtore
+- Auswärtstore 
+- Sieger
+
+## Goal
+- Matchnr
+- Player
+- Team
+- Score
 
 ## Members
 - Jon Landa
