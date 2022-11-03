@@ -1,1 +1,1 @@
-CREATE (team:Team {name:'Athletic Club Bilbao', trainer:'Ernesto Valverde'})
+CREATE (n:Team {name:'Athletic Club Bilbao', trainer:'Ernesto Valverde'})
