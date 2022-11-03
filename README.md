@@ -5,7 +5,8 @@ Database with LaLiga teams for module M165
 
 # Checklist
 - [x] Installation
-- [ ] Data Modeling
+- [x] Data Modeling
+- [ ] Logisches Datenmodell
 - [ ] Skript
 
 ## Ziel
