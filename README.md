@@ -5,7 +5,7 @@ Database with LaLiga teams and Playoff Matches with 5 Players per Team as 5v5 Ma
 
 # Checklist
 - [x] Installation
-- [ ] Data Modeling
+- [x] Data Modeling
 - [ ] Skript
 
 ## Ziel
