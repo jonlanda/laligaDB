@@ -32,7 +32,6 @@ CREATE (c:Spieler {name:'Dani Parejo', position:'CM', nummer:'10'})
 CREATE (d:Spieler {name:'Arnaut Danjuma', position:'LW', nummer:'9'})
 CREATE (e:Spieler {name:'Gerard Moreno', position:'ST', nummer:'7'})
 
-
 //RELATIONSHIPS
 MATCH (a:Team), (b:Spieler) WHERE a.name = 'Real Madrid Club de Futbol' AND b.name = 'Thibaut Courtois' CREATE (b)-[r:PLAYS_FOR]->(a)
 MATCH (a:Team), (b:Spieler) WHERE a.name = 'Real Madrid Club de Futbol' AND b.name = 'Antonio Rüdiger' CREATE (b)-[r:PLAYS_FOR]->(a)
