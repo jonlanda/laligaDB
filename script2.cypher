@@ -28,7 +28,7 @@ CREATE (e:Spieler {name:'Alexander Sorloth', position:'ST', nummer:'19'})
 
 CREATE (a:Spieler {name:'Pepe Reina', position:'GK', nummer:'1'})
 CREATE (b:Spieler {name:'Pau Torres', position:'CB', nummer:'4'})
-CREATE (c:Spieler {name:'Daniel Parejo', position:'CM', nummer:'10'})
+CREATE (c:Spieler {name:'Dani Parejo', position:'CM', nummer:'10'})
 CREATE (d:Spieler {name:'Arnaut Danjuma', position:'LW', nummer:'9'})
 CREATE (e:Spieler {name:'Gerard Moreno', position:'ST', nummer:'7'})
 
