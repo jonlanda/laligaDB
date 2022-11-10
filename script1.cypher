@@ -3,8 +3,10 @@ CREATE (n:Team {name:'Athletic Club Bilbao', trainer:'Ernesto Valverde'})
 
 CREATE (n:Team {name:'Club Atlético Osasuna', trainer:'Jagoba Arrasate'})
 
+CREATE (n:Team {name:'Sociedad Deportiva Eibar', trainer:'Gaizka Garitano'})
+
 //PLAYERS
-CREATE (n:Spieler {name:'Álex Berenguer', position:'RM', nummer:'12'})
+CREATE (n:Spieler {name:'Álex Berenguer', position:'RM', nummer:'7'})
 CREATE (n:Spieler {name:'Unai Simón', position:'GK', nummer:'1'})
 CREATE (n:Spieler {name:'Oihan Sancet', position:'CM', nummer:'8'})
 CREATE (n:Spieler {name:'Dani Vivian', position:'CB', nummer:'3'})
@@ -15,6 +17,10 @@ CREATE (n:Spieler {name:'David Garcia', position:'CB', nummer:'5'})
 CREATE (n:Spieler {name:'Aitor Fernández', position:'GK', nummer:'25'})
 CREATE (n:Spieler {name:'Moisés Gómez', position:'LM', nummer:'16'})
 CREATE (n:Spieler {name:'Rubén Garcia', position:'RM', nummer:'14'})
+
+CREATE (n:Spieler {name:'Luca Zinedine Zidane', position:'GK', nummer:'25'})
+CREATE (n:Spieler {name:'Fernando Llorente', position:'ST', nummer:'24'})
+
 
 //RELATIONSHIPS
 MATCH (a:Team), (b:Spieler) WHERE a.name = 'Athletic Club Bilbao' AND b.name = 'Álex Berenguer' CREATE (b)-[r:PLAYS_FOR]->(a)
