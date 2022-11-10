@@ -32,6 +32,21 @@ CREATE (c:Spieler {name:'Álex Moreno', position:'LB', nummer:'15'})
 CREATE (d:Spieler {name:'Borja Iglesias', position:'ST', nummer:'9'})
 CREATE (e:Spieler {name:'William Carvalho', position:'CM', nummer:'14'})
 
+//MATCHES
+CREATE (a:Match {name:'Viertelfinale 1'})
+CREATE (b:Match {name:'Viertelfinale 2'})
+CREATE (c:Match {name:'Halbfinale 1'})
+
+//GOALS
+CREATE (a:Goal {goalID:'1', minute:'17'})
+CREATE (b:Goal {goalID:'2', minute:'35'})
+CREATE (c:Goal {goalID:'3', minute:'57'})
+CREATE (d:Goal {goalID:'4', minute:'84'})
+CREATE (e:Goal {goalID:'5', minute:'89'})
+CREATE (f:Goal {goalID:'6', minute:'44'})
+CREATE (g:Goal {goalID:'7', minute:'79'})
+CREATE (h:Goal {goalID:'8', minute:'87'})
+
 //RELATIONSHIPS
 MATCH (a:Team), (b:Spieler) WHERE a.name = 'Athletic Club Bilbao' AND b.name = 'Álex Berenguer' CREATE (b)-[r:PLAYS_FOR]->(a)
 MATCH (a:Team), (b:Spieler) WHERE a.name = 'Athletic Club Bilbao' AND b.name = 'Unai Simón' CREATE (b)-[r:PLAYS_FOR]->(a)
@@ -56,3 +71,8 @@ MATCH (a:Team), (b:Spieler) WHERE a.name = 'Real Betis Balompié' AND b.name = '
 MATCH (a:Team), (b:Spieler) WHERE a.name = 'Real Betis Balompié' AND b.name = 'Borja Iglesias' CREATE (b)-[r:PLAYS_FOR]->(a)
 MATCH (a:Team), (b:Spieler) WHERE a.name = 'Real Betis Balompié' AND b.name = 'Álex Moreno' CREATE (b)-[r:PLAYS_FOR]->(a)
 MATCH (a:Team), (b:Spieler) WHERE a.name = 'Real Betis Balompié' AND b.name = 'William Carvalho' CREATE (b)-[r:PLAYS_FOR]->(a)
+
+MATCH (a:Team), (b:Match) WHERE a.name = 'Athletic Club Bilbao' AND b.name = 'Viertelfinale 1' CREATE (a)-[r:PLAYED_IN]->(b)
+MATCH (a:Team), (b:Match) WHERE a.name = 'Club Atlético Osasuna' AND b.name = 'Viertelfinale 1' CREATE (a)-[r:PLAYED_IN]->(b)
+MATCH (a:Team), (b:Match) WHERE a.name = 'Sociedad Deportiva Eibar' AND b.name = 'Viertelfinale 2' CREATE (a)-[r:PLAYED_IN]->(b)
+MATCH (a:Team), (b:Match) WHERE a.name = 'Real Betis Balompié' AND b.name = 'Viertelfinale 2' CREATE (a)-[r:PLAYED_IN]->(b)
