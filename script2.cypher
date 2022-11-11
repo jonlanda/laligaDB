@@ -68,20 +68,45 @@ MATCH (a:Team), (b:Match) WHERE a.name = 'Real Madrid Club de Futbol' AND b.name
 MATCH (a:Team), (b:Match) WHERE a.name = 'Real Sociedad de Futbol' AND b.name = 'Viertelfinale 3' CREATE (a)-[r:PLAYED_IN]->(b)
 MATCH (a:Team), (b:Match) WHERE a.name = 'Sevilla Futbol Club' AND b.name = 'Viertelfinale 4' CREATE (a)-[r:PLAYED_IN]->(b)
 MATCH (a:Team), (b:Match) WHERE a.name = 'Villareal Club de Futbol' AND b.name = 'Viertelfinale 4' CREATE (a)-[r:PLAYED_IN]->(b)
-
+MATCH (a:Team), (b:Match) WHERE a.name = 'Villareal Club de Futbol' AND b.name = 'Halbfinale 2' CREATE (a)-[r:PLAYED_IN]->(b)
+MATCH (a:Team), (b:Match) WHERE a.name = 'Real Madrid Club de Futbol' AND b.name = 'Halbfinale 2' CREATE (a)-[r:PLAYED_IN]->(b)
 
 //GOALS
 
 //Viertelfinale 3
-CREATE (a:Goal{goalID:'10', minute:'2'})
-CREATE (b:Goal{goalID:'11', minute:'41'})
-
-//Viertelfinale 4
-CREATE (c:Goal{goalID:'10', minute:'57'})
-CREATE (d:Goal{goalID:'10', minute:'88'})
-CREATE (e:Goal{goalID:'10', minute:'90'})
+CREATE (a:Goal{goalID:'11', minute:'2'})
+CREATE (b:Goal{goalID:'12', minute:'41'})
+CREATE (i:Goal{goalID:'13', minute:'62'})
+CREATE (m:Goal{goalID:'14', minute:'78'})
 
 //Halbfinale 2
-CREATE (f:Goal{goalID:'10', minute:'16'})
-CREATE (g:Goal{goalID:'10', minute:'75'})
-CREATE (h:Goal{goalID:'10', minute:'90'})
+CREATE (c:Goal{goalID:'15', minute:'57'})
+CREATE (d:Goal{goalID:'16', minute:'88'})
+CREATE (e:Goal{goalID:'17', minute:'90'})
+
+//Viertelfinale 4
+CREATE (f:Goal{goalID:'18', minute:'16'})
+CREATE (g:Goal{goalID:'19', minute:'75'})
+CREATE (h:Goal{goalID:'20', minute:'90'})
+
+MATCH (a:Spieler), (b:Goal) WHERE a.name = 'Federico Valverde' AND b.goalID = '11' CREATE (a)-[r:SCORED]->(b)
+MATCH (a:Spieler), (b:Goal) WHERE a.name = 'Vinicius Junior' AND b.goalID = '12' CREATE (a)-[r:SCORED]->(b)
+MATCH (a:Spieler), (b:Goal) WHERE a.name = 'Federico Valverde' AND b.goalID = '13' CREATE (a)-[r:SCORED]->(b)
+MATCH (a:Spieler), (b:Goal) WHERE a.name = 'Alexander Sorloth' AND b.goalID = '14' CREATE (a)-[r:SCORED]->(b)
+MATCH (a:Spieler), (b:Goal) WHERE a.name = 'Rafa Mir' AND b.goalID = '18' CREATE (a)-[r:SCORED]->(b)
+MATCH (a:Spieler), (b:Goal) WHERE a.name = 'Pau Torres' AND b.goalID = '19' CREATE (a)-[r:SCORED]->(b)
+MATCH (a:Spieler), (b:Goal) WHERE a.name = 'Arnaut Danjuma' AND b.goalID = '20' CREATE (a)-[r:SCORED]->(b)
+MATCH (a:Spieler), (b:Goal) WHERE a.name = 'Gerard Moreno' AND b.goalID = '15' CREATE (a)-[r:SCORED]->(b)
+MATCH (a:Spieler), (b:Goal) WHERE a.name = 'Karim Benzema' AND b.goalID = '16' CREATE (a)-[r:SCORED]->(b)
+MATCH (a:Spieler), (b:Goal) WHERE a.name = 'Federico Valverde' AND b.goalID = '17' CREATE (a)-[r:SCORED]->(b)
+
+MATCH (a:Goal), (b:Match) WHERE a.goalID = '11' AND b.name = 'Viertelfinale 3' CREATE (a)-[r:IN]->(b)
+MATCH (a:Goal), (b:Match) WHERE a.goalID = '12' AND b.name = 'Viertelfinale 3' CREATE (a)-[r:IN]->(b)
+MATCH (a:Goal), (b:Match) WHERE a.goalID = '13' AND b.name = 'Viertelfinale 3' CREATE (a)-[r:IN]->(b)
+MATCH (a:Goal), (b:Match) WHERE a.goalID = '14' AND b.name = 'Viertelfinale 3' CREATE (a)-[r:IN]->(b)
+MATCH (a:Goal), (b:Match) WHERE a.goalID = '18' AND b.name = 'Viertelfinale 4' CREATE (a)-[r:IN]->(b)
+MATCH (a:Goal), (b:Match) WHERE a.goalID = '19' AND b.name = 'Viertelfinale 4' CREATE (a)-[r:IN]->(b)
+MATCH (a:Goal), (b:Match) WHERE a.goalID = '20' AND b.name = 'Viertelfinale 4' CREATE (a)-[r:IN]->(b)
+MATCH (a:Goal), (b:Match) WHERE a.goalID = '15' AND b.name = 'Halbfinale 2' CREATE (a)-[r:IN]->(b)
+MATCH (a:Goal), (b:Match) WHERE a.goalID = '16' AND b.name = 'Halbfinale 2' CREATE (a)-[r:IN]->(b)
+MATCH (a:Goal), (b:Match) WHERE a.goalID = '17' AND b.name = 'Halbfinale 2' CREATE (a)-[r:IN]->(b)
