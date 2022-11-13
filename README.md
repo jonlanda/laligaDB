@@ -1,12 +1,21 @@
+# NEO4J
 # laligaPlayoffDB
 Database with LaLiga teams and Playoff Matches with 5 Players per Team as 5v5 Matches for module M165
 
-# NEO4J
+# Fazit
+Es war einfacher als erwartet und als wir dann mal im Thema richtig drin waren ging es sehr schnell und einfach. Es war spannend mal eine andere Art von DB kennenzulernen.
+
+# Quellen
+https://neo4j.com/docs/getting-started/current/get-started-with-neo4j/
+https://neo4j.com/docs/cypher-manual/current/clauses/create/
+https://neo4j.com/docs/cypher-manual/current/clauses/match/
+https://neo4j.com/docs/getting-started/current/data-modeling/relational-to-graph-modeling/
+https://neo4j.com/docs/cypher-manual/current/clauses/delete/
 
 # Checklist
 - [x] Installation
 - [x] Data Modeling
-- [ ] Skript
+- [x] Skript
 
 ## Ziel
 - Datenbank mit 8 Teams von Laliga oder LaLiga 2
