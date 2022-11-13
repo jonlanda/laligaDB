@@ -11,6 +11,7 @@ MATCH (:Match {name: 'Viertelfinale 3'})--(goal:Goal)--(spieler:Spieler)--(team:
 MATCH (:Match {name: 'Viertelfinale 4'})--(goal:Goal)--(spieler:Spieler)--(team:Team) RETURN goal.minute AS Minute, spieler.name AS Name, team.name AS Teamname ORDER BY goal.minute ASC
 MATCH (:Match {name: 'Halbfinale 1'})--(goal:Goal)--(spieler:Spieler)--(team:Team) RETURN goal.minute AS Minute, spieler.name AS Name, team.name AS Teamname ORDER BY goal.minute ASC
 MATCH (:Match {name: 'Halbfinale 2'})--(goal:Goal)--(spieler:Spieler)--(team:Team) RETURN goal.minute AS Minute, spieler.name AS Name, team.name AS Teamname ORDER BY goal.minute ASC
+MATCH (:Match {name: 'Finale'})--(goal:Goal)--(spieler:Spieler)--(team:Team) RETURN goal.minute AS Minute, spieler.name AS Name, team.name AS Teamname ORDER BY goal.minute ASC
 
 //ENDERGEBNISS
 MATCH (:Match {name: 'Viertelfinale 1'})--(goal:Goal)--(spieler:Spieler)--(team:Team) RETURN team.name AS Teamname, COUNT(team) AS Goals
@@ -19,6 +20,8 @@ MATCH (:Match {name: 'Viertelfinale 3'})--(goal:Goal)--(spieler:Spieler)--(team:
 MATCH (:Match {name: 'Viertelfinale 4'})--(goal:Goal)--(spieler:Spieler)--(team:Team) RETURN team.name AS Teamname, COUNT(team) AS Goals
 MATCH (:Match {name: 'Halbfinale 1'})--(goal:Goal)--(spieler:Spieler)--(team:Team) RETURN team.name AS Teamname, COUNT(team) AS Goals
 MATCH (:Match {name: 'Halbfinale 2'})--(goal:Goal)--(spieler:Spieler)--(team:Team) RETURN team.name AS Teamname, COUNT(team) AS Goals
+MATCH (:Match {name: 'Finale'})--(goal:Goal)--(spieler:Spieler)--(team:Team) RETURN team.name AS Teamname, COUNT(team) AS Goals
+
 
 //ERGEBNISS VON ALLEN PARTIEN
 MATCH (match:Match)--(goal:Goal)--(spieler:Spieler)--(team:Team) RETURN match.name AS Match, team.name AS Teamname, COUNT(team) AS Goals

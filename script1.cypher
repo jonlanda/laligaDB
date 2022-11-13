@@ -1,11 +1,11 @@
 //TEAMS
 CREATE (n:Team {name:'Athletic Club Bilbao', trainer:'Ernesto Valverde'})
 
-CREATE (n:Team {name:'Club Atlético Osasuna', trainer:'Jagoba Arrasate'})
+CREATE (m:Team {name:'Club Atlético Osasuna', trainer:'Jagoba Arrasate'})
 
-CREATE (n:Team {name:'Sociedad Deportiva Eibar', trainer:'Gaizka Garitano'})
+CREATE (d:Team {name:'Sociedad Deportiva Eibar', trainer:'Gaizka Garitano'})
 
-CREATE (n:Team {name:'Real Betis Balompié', trainer:'Manuel Pellegrini'})
+CREATE (f:Team {name:'Real Betis Balompié', trainer:'Manuel Pellegrini'})
 
 //PLAYERS
 CREATE (n:Spieler {name:'Álex Berenguer', position:'RM', nummer:'7'})
@@ -36,6 +36,7 @@ CREATE (e:Spieler {name:'William Carvalho', position:'CM', nummer:'14'})
 CREATE (a:Match {name:'Viertelfinale 1'})
 CREATE (b:Match {name:'Viertelfinale 2'})
 CREATE (c:Match {name:'Halbfinale 1'})
+CREATE (d:Match {name:'Finale'})
 
 //GOALS
 CREATE (a:Goal {goalID: 1, minute: 17})
@@ -48,7 +49,11 @@ CREATE (g:Goal {goalID: 7, minute: 79})
 CREATE (h:Goal {goalID: 8, minute: 87})
 CREATE (i:Goal {goalID: 9, minute: 92})
 CREATE (j:Goal {goalID: 10, minute: 117})
-
+CREATE (k:Goal {goalID: 21, minute: 34})
+CREATE (l:Goal {goalID: 22, minute: 56})
+CREATE (m:Goal {goalID: 23, minute: 78})
+CREATE (n:Goal {goalID: 24, minute: 82})
+CREATE (o:Goal {goalID: 25, minute: 91})
 //RELATIONSHIPS
 MATCH (a:Team), (b:Spieler) WHERE a.name = 'Athletic Club Bilbao' AND b.name = 'Álex Berenguer' CREATE (b)-[r:PLAYS_FOR]->(a)
 MATCH (a:Team), (b:Spieler) WHERE a.name = 'Athletic Club Bilbao' AND b.name = 'Unai Simón' CREATE (b)-[r:PLAYS_FOR]->(a)
@@ -80,6 +85,7 @@ MATCH (a:Team), (b:Match) WHERE a.name = 'Sociedad Deportiva Eibar' AND b.name =
 MATCH (a:Team), (b:Match) WHERE a.name = 'Real Betis Balompié' AND b.name = 'Viertelfinale 1' CREATE (a)-[r:PLAYED_IN]->(b)
 MATCH (a:Team), (b:Match) WHERE a.name = 'Athletic Club Bilbao' AND b.name = 'Halbfinale 1' CREATE (a)-[r:PLAYED_IN]->(b)
 MATCH (a:Team), (b:Match) WHERE a.name = 'Sociedad Deportiva Eibar' AND b.name = 'Halbfinale 1' CREATE (a)-[r:PLAYED_IN]->(b)
+MATCH (a:Team), (b:Match) WHERE a.name = 'Athletic Club Bilbao' AND b.name = 'Finale' CREATE (a)-[r:PLAYED_IN]->(b)
 
 MATCH (a:Spieler), (b:Goal) WHERE a.name = 'Joaquin' AND b.goalID = 1 CREATE (a)-[r:SCORED]->(b)
 MATCH (a:Spieler), (b:Goal) WHERE a.name = 'Nico Williams' AND b.goalID = 2 CREATE (a)-[r:SCORED]->(b)
@@ -91,6 +97,11 @@ MATCH (a:Spieler), (b:Goal) WHERE a.name = 'Oihan Sancet' AND b.goalID = 7 CREAT
 MATCH (a:Spieler), (b:Goal) WHERE a.name = 'Álex Berenguer' AND b.goalID = 8 CREATE (a)-[r:SCORED]->(b)
 MATCH (a:Spieler), (b:Goal) WHERE a.name = 'Jon Moncayola' AND b.goalID = 9 CREATE (a)-[r:SCORED]->(b)
 MATCH (a:Spieler), (b:Goal) WHERE a.name = 'Fernando Llorente' AND b.goalID = 10 CREATE (a)-[r:SCORED]->(b)
+MATCH (a:Spieler), (b:Goal) WHERE a.name = 'Federico Valverde' AND b.goalID = 21 CREATE (a)-[r:SCORED]->(b)
+MATCH (a:Spieler), (b:Goal) WHERE a.name = 'Álex Berenguer' AND b.goalID = 22 CREATE (a)-[r:SCORED]->(b)
+MATCH (a:Spieler), (b:Goal) WHERE a.name = 'Oihan Sancet' AND b.goalID = 23 CREATE (a)-[r:SCORED]->(b)
+MATCH (a:Spieler), (b:Goal) WHERE a.name = 'Dani Vivian' AND b.goalID = 24 CREATE (a)-[r:SCORED]->(b)
+MATCH (a:Spieler), (b:Goal) WHERE a.name = 'Álex Berenguer' AND b.goalID = 25 CREATE (a)-[r:SCORED]->(b)
 
 MATCH (a:Goal), (b:Match) WHERE a.goalID = 1 AND b.name = 'Viertelfinale 1' CREATE (a)-[r:IN]->(b)
 MATCH (a:Goal), (b:Match) WHERE a.goalID = 2 AND b.name = 'Viertelfinale 1' CREATE (a)-[r:IN]->(b)
@@ -102,3 +113,8 @@ MATCH (a:Goal), (b:Match) WHERE a.goalID = 10 AND b.name = 'Viertelfinale 2' CRE
 MATCH (a:Goal), (b:Match) WHERE a.goalID = 6 AND b.name = 'Halbfinale 1' CREATE (a)-[r:IN]->(b)
 MATCH (a:Goal), (b:Match) WHERE a.goalID = 7 AND b.name = 'Halbfinale 1' CREATE (a)-[r:IN]->(b)
 MATCH (a:Goal), (b:Match) WHERE a.goalID = 8 AND b.name = 'Halbfinale 1' CREATE (a)-[r:IN]->(b)
+MATCH (a:Goal), (b:Match) WHERE a.goalID = 21 AND b.name = 'Finale' CREATE (a)-[r:IN]->(b)
+MATCH (a:Goal), (b:Match) WHERE a.goalID = 22 AND b.name = 'Finale' CREATE (a)-[r:IN]->(b)
+MATCH (a:Goal), (b:Match) WHERE a.goalID = 23 AND b.name = 'Finale' CREATE (a)-[r:IN]->(b)
+MATCH (a:Goal), (b:Match) WHERE a.goalID = 24 AND b.name = 'Finale' CREATE (a)-[r:IN]->(b)
+MATCH (a:Goal), (b:Match) WHERE a.goalID = 25 AND b.name = 'Finale' CREATE (a)-[r:IN]->(b)

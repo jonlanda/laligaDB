@@ -70,6 +70,7 @@ MATCH (a:Team), (b:Match) WHERE a.name = 'Sevilla Futbol Club' AND b.name = 'Vie
 MATCH (a:Team), (b:Match) WHERE a.name = 'Villareal Club de Futbol' AND b.name = 'Viertelfinale 4' CREATE (a)-[r:PLAYED_IN]->(b)
 MATCH (a:Team), (b:Match) WHERE a.name = 'Villareal Club de Futbol' AND b.name = 'Halbfinale 2' CREATE (a)-[r:PLAYED_IN]->(b)
 MATCH (a:Team), (b:Match) WHERE a.name = 'Real Madrid Club de Futbol' AND b.name = 'Halbfinale 2' CREATE (a)-[r:PLAYED_IN]->(b)
+MATCH (a:Team), (b:Match) WHERE a.name = 'Real Madrid Club de Futbol' AND b.name = 'Finale' CREATE (a)-[r:PLAYED_IN]->(b)
 
 //GOALS
 
